@@ -102,18 +102,19 @@ const NotesTokerApp = () => {
 
   const handleUpdateNotes = () => {
     if (newNotes.content.trim() && newNotes.description.trim()) {
-      notes.map((item) =>
-        item.id === editingId
-          ? {
-              id: item.id,
-              content: item.content,
-              description: item.description,
-            }
-          : notes
-      );
-      setNewNotes({ content: "", description: "" });
-      setEditingId(null);
+    
+      setNotes(
+        notes.map((note) =>
+          note.id === editingId
+            ? { id: note.id, content: newNotes.content, description: newNotes.description}
+            : note
+        )
+      )
+     
+      
     }
+    setNewNotes({content:"",description:""})
+    setEditingId(null);
   };
 
   const handleDelete = (id: number) => {
