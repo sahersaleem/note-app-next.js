@@ -54,7 +54,7 @@ function useLocalStorage<T>(key: string, intialValue: T) {
         window.localStorage.setItem(key, JSON.stringify(valueToStore));
       }
     } catch (err: any) {
-      console.log("Error ocurred while setting item!");
+      console.log("Error ocurred while setting item!",err);
     }
   };
 
