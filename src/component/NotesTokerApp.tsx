@@ -41,7 +41,7 @@ function useLocalStorage<T>(key: string, intialValue: T) {
           setStoredValue(JSON.parse(getItem));
         }
       } catch (err: any) {
-        console.log("error occurred while getting items");
+        console.log("error occurred while getting items",err);
       }
     }
   }, [key]);
